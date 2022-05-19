@@ -14,6 +14,21 @@ body {
     font-size: 2.5rem;
 }
 
+/* Classes to be used to simulate animations */
+
+table.GeneratedTable td.activated {
+    background-color: yellow;
+}
+
+table.GeneratedTable td.activated:hover {
+    background-color: yellow;
+}
+
+table.GeneratedTable td.activated:active {
+    background-color: yellow;
+}
+
+
 /* --------- Game layout */
 
 .game-area {
@@ -39,11 +54,16 @@ table.GeneratedTable {
 }
 
 table.GeneratedTable td{
+    box-sizing: border-box;
     border-width: 2px;
     border-color: rgba(0, 0, 0, 10);
     border-style: solid;
     padding: 5%;
-    background-color: #ffffff;
+    background-color: white;
+}
+
+table.GeneratedTable td:hover {
+    background-color: rgb(120,120,75);
 }
 
 .score-area {
@@ -71,6 +91,7 @@ table.GeneratedTable td{
     display: inline-block;
     padding: 25px;
 }
+
 
 /* --------- Buttons */
 
