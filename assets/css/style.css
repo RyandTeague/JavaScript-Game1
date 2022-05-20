@@ -28,6 +28,9 @@ table.GeneratedTable td.activated:active {
     background-color: yellow;
 }
 
+.unclickable {
+    pointer-events: none;
+  }
 
 /* --------- Game layout */
 

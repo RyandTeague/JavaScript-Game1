@@ -1,6 +1,6 @@
 let pattern = [];
 let playerPattern = [];
-let score = 0;
+let score;
 let flash;
 let good;
 let compTurn;
@@ -42,67 +42,118 @@ const t29 = document.getElementById('29')
 const t30 = document.getElementById('30')
 
 function runGame() {
-    console.log("you pressed the start button")
+    win = false;
+    pattern = [];
+    playerPattern = [];
+    flash = [];
+    intervalId = 0;
+    score = 0;
+    scoreCounter.innerHTML = 1;
+    good = true;
+
+    for (var i = 0; i < 10; i++) {
+        if (i = 1) {
+        pattern.push(Math.floor(Math.random() * 3 + 1))
+        }
+    }
+    console.log(pattern)
 }
 
 function pathBuild() {
     if (score = 1) {
-        const tiles = ['1', '2', '3'];
+        const tiles = [t1, t2, t3];
         const random = tiles[Math.floor(Math.random() * 3 )];
-        return random;
+        pattern.push(random)
     } else if (score = 2) {
-        const tiles = ['4', '5', '6'];
+        const tiles = [t4,t5,t6];
         const random = tiles[Math.floor(Math.random() * 3 )];
-        return random;
+        pattern.push(random)
     } else if (score = 3) {
-        const tiles = ['7', '8', '9'];
+        const tiles = [t7,t8,t9];
         const random = tiles[Math.floor(Math.random() * 3 )];
-        return random;
+        pattern.push(random)
     } else if (score = 4) {
-        const tiles = ['10', '11', '12'];
+        const tiles = [t10,t11,t12];
         const random = tiles[Math.floor(Math.random() * 3 )];
-        return random;
+        pattern.push(random)
     } else if (score = 5) {
-        const tiles = ['13', '14', '15'];
+        const tiles = [t13,t14,t15];
         const random = tiles[Math.floor(Math.random() * 3 )];
-        return random;
+        pattern.push(random)
     } else if (score = 6) {
-        const tiles = ['16', '17', '18'];
+        const tiles = [t16,t17,t18];
         const random = tiles[Math.floor(Math.random() * 3 )];
-        return random;
+        pattern.push(random)
     } else if (score = 7) {
-        const tiles = ['19', '20', '21'];
+        const tiles = [t19,t20,t21];
         const random = tiles[Math.floor(Math.random() * 3 )];
-        return random;
+        pattern.push(random)
     } else if (score = 8) {
-        const tiles = ['22', '23', '24'];
+        const tiles = [t22,t23,t24];
         const random = tiles[Math.floor(Math.random() * 3 )];
-        return random;
+        pattern.push(random)
     } else if (score = 9) {
-        const tiles = ['25', '26', '27'];
+        const tiles = [t25,t26,t27];
         const random = tiles[Math.floor(Math.random() * 3 )];
-        return random;
+        pattern.push(random)
     } else if (score = 10) {
-        const tiles = ['28', '29', '30'];
+        const tiles = [t28,t29,t30];
         const random = tiles[Math.floor(Math.random() * 3 )];
-        return random;
+        pattern.push(random)
     }
 }
 
 function nextLevel () {
-    ++score;
-
-    const newPattern = [sequence]
+    score += 1;
+    scoreCounter.textContent = score;
+    const newPattern = [pattern]
     newPattern.push(pathBuild());
+    console.log(newPattern)
 }
 
 function gameWin() {
 
 }
 
-function turnOn() {
+function yellow() {
+    if (this.classList.contains("activated")) {
+        this.classList.remove("activated")
+    } else {
     this.classList.add("activated")
+    }
 }
 
 
-t1.addEventListener('click', turnOn())
+startButton.addEventListener('click', runGame)
+
+t1.addEventListener('click', yellow)
+t2.addEventListener('click', yellow)
+t3.addEventListener('click', yellow)
+t4.addEventListener('click', yellow)
+t5.addEventListener('click', yellow)
+t6.addEventListener('click', yellow)
+t7.addEventListener('click', yellow)
+t8.addEventListener('click', yellow)
+t9.addEventListener('click', yellow)
+t9.addEventListener('click', yellow)
+t10.addEventListener('click', yellow)
+t11.addEventListener('click', yellow)
+t12.addEventListener('click', yellow)
+t13.addEventListener('click', yellow)
+t14.addEventListener('click', yellow)
+t15.addEventListener('click', yellow)
+t16.addEventListener('click', yellow)
+t17.addEventListener('click', yellow)
+t18.addEventListener('click', yellow)
+t19.addEventListener('click', yellow)
+t20.addEventListener('click', yellow)
+t21.addEventListener('click', yellow)
+t22.addEventListener('click', yellow)
+t23.addEventListener('click', yellow)
+t24.addEventListener('click', yellow)
+t25.addEventListener('click', yellow)
+t26.addEventListener('click', yellow)
+t27.addEventListener('click', yellow)
+t28.addEventListener('click', yellow)
+t29.addEventListener('click', yellow)
+t30.addEventListener('click', yellow)
