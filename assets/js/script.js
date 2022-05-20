@@ -6,6 +6,8 @@ let good;
 let compTurn;
 let intervalId;
 let win;
+let normal;
+let secret;
 
 const startButton = document.getElementById("gamestart")
 const infoButton = document.getElementById('info')
@@ -16,6 +18,7 @@ const lop = document.getElementById("lopmode")
 
 
 function runGame() {
+    normal = true;
     visible()
     win = false;
     cantClick()
@@ -61,64 +64,64 @@ function anim() {
 function canClick() {
     for (const box of boxes) {
         box.classList.remove('unclickable');
-      }
+    }
 }
 
 /* adds the unclickable class from the tiles so they cannot be interacted with by the Player */
 function cantClick() {
     for (const box of boxes) {
         box.classList.add('unclickable');
-      }
+    }
 }
 
 function check() {
-    if (playerPattern[playerPattern.length - 1] !== pattern[playerPattern.length - 1]) 
-      good = false;
+        if (playerPattern[playerPattern.length - 1] !== pattern[playerPattern.length - 1])
+            good = false;
 
-    if (playerPattern.length == 10 && good) {
-        gameWin()
-    };
-    
-    if (good == false) {
-        gameLose()
-    }
+        if (playerPattern.length == 10 && good) {
+            gameWin()
+        };
 
-    if (score == playerPattern.length && good && !win) {
-        score++;
-        scoreCounter.innerHTML = score - 1
-        playerPattern = [];
-        compTurn = true;
-        flash = 0;
-        intervalId = setInterval(gameTurn, 800)
-    }
+        if (good == false) {
+            gameLose()
+        }
+
+        if (score == playerPattern.length && good && !win) {
+            score++;
+            scoreCounter.innerHTML = score - 1
+            playerPattern = [];
+            compTurn = true;
+            flash = 0;
+            intervalId = setInterval(gameTurn, 800)
+        }
 }
 
 
 /* generates a random number 10 times, each time changing the range by 3
-* to create a number for each row of the path
+ * to create a number for each row of the path
  */
 function pathBuild(i) {
     if (i < 1) {
-        pattern.push(Math.floor(Math.random() * 3 + 1)) 
-        } else if (i < 2) {
-            pattern.push(Math.floor(Math.random() * 3 + 4))
-        } else if (i < 3) {
-            pattern.push(Math.floor(Math.random() * 3 + 7))
-        } else if (i < 4) {
-            pattern.push(Math.floor(Math.random() * 3 + 10))
-        } else if (i < 5) {
-            pattern.push(Math.floor(Math.random() * 3 + 13))
-        } else if (i < 6) {
-            pattern.push(Math.floor(Math.random() * 3 + 16))
-        } else if (i < 7) {
-            pattern.push(Math.floor(Math.random() * 3 + 19))
-        } else if (i < 8) {
-            pattern.push(Math.floor(Math.random() * 3 + 22))
-        } else if (i < 9) {
-            pattern.push(Math.floor(Math.random() * 3 + 25))
-        } else if (i < 10) {
-            pattern.push(Math.floor(Math.random() * 3 + 27))
-        }
+        pattern.push(Math.floor(Math.random() * 3 + 1))
+    } else if (i < 2) {
+        pattern.push(Math.floor(Math.random() * 3 + 4))
+    } else if (i < 3) {
+        pattern.push(Math.floor(Math.random() * 3 + 7))
+    } else if (i < 4) {
+        pattern.push(Math.floor(Math.random() * 3 + 10))
+    } else if (i < 5) {
+        pattern.push(Math.floor(Math.random() * 3 + 13))
+    } else if (i < 6) {
+        pattern.push(Math.floor(Math.random() * 3 + 16))
+    } else if (i < 7) {
+        pattern.push(Math.floor(Math.random() * 3 + 19))
+    } else if (i < 8) {
+        pattern.push(Math.floor(Math.random() * 3 + 22))
+    } else if (i < 9) {
+        pattern.push(Math.floor(Math.random() * 3 + 25))
+    } else if (i < 10) {
+        pattern.push(Math.floor(Math.random() * 3 + 27))
+    }
 }
 
 function gameWin() {
@@ -126,16 +129,18 @@ function gameWin() {
     cantClick();
     win = true;
     lop.style.opacity = "100"
+    lop.classList.remove('unclickable')
     setTimeout(() => {
         for (box of boxes) {
             clearBox()
-        }}, 1600);
+        }
+    }, 1600);
 }
 
 function gameLose() {
     alert("you lose")
     if (bestScore.innerHTML < scoreCounter.innerHTML) {
-    bestScore.innerHTML = scoreCounter.innerHTML
+        bestScore.innerHTML = scoreCounter.innerHTML
     }
     scoreCounter.innerHTML = 0
     for (i = 0; i < playerPattern.length; i++) {
@@ -146,7 +151,8 @@ function gameLose() {
     setTimeout(() => {
         for (box of boxes) {
             box.style.backgroundColor = "white"
-        }}, 1600);
+        }
+    }, 1600);
     clearBox()
 }
 
@@ -154,26 +160,26 @@ function yellow() {
     if (this.classList.contains("activated")) {
         this.classList.remove("activated")
     } else {
-    this.classList.add("activated")
+        this.classList.add("activated")
     }
 }
 
 function clearBox() {
     for (const box of boxes) {
         box.classList.remove('activated');
-      }
+    }
 }
 
-function invisible()  {
+function invisible() {
     for (const box of boxes) {
         box.classList.add('invisible');
-      }
+    }
 }
 
-function visible()  {
+function visible() {
     for (const box of boxes) {
         box.classList.remove('invisible');
-      }
+    }
 }
 
 function gameOver() {
@@ -193,22 +199,25 @@ startButton.addEventListener('click', runGame)
 
 for (const box of boxes) {
     box.addEventListener('click', (event) => {
-        if(playerPattern.indexOf(event.target.id) != -1){ 
-            return; 
+        if (playerPattern.indexOf(event.target.id) != -1) {
+            return;
         };
         playerPattern.push(parseInt(event.target.id));
+        if (normal) {
         check();
-        if(!win) {
+        } else {
+            checkLop()
+        }
+        if (!win) {
             setTimeout(() => {
-                visible()
             }, 300)
         }
     });
-  }
+}
 
-  for (const box of boxes) {
+for (const box of boxes) {
     box.addEventListener('click', yellow)
-  }
+}
 
 
 function playerPath() {
@@ -220,6 +229,8 @@ function playerPath() {
 lop.addEventListener('click', runLopGame)
 
 function runLopGame() {
+    normal = false;
+    visible()
     win = false;
     cantClick()
     pattern = [];
@@ -241,9 +252,9 @@ function gameTurnLop() {
     if (flash == score) {
         clearInterval(intervalId);
         compTurn = false;
-        invisible()
         clearBox();
         canClick();
+        invisible()
     }
 
     if (compTurn) {
@@ -255,4 +266,27 @@ function gameTurnLop() {
             flash++
         }, 200)
     }
+}
+
+function checkLop() {
+    if (playerPattern[playerPattern.length - 1] !== pattern[playerPattern.length - 1])
+            good = false;
+
+        if (playerPattern.length == 10 && good) {
+            gameWin()
+        };
+
+        if (good == false) {
+            gameLose()
+        }
+
+        if (score == playerPattern.length && good && !win) {
+            score++;
+            scoreCounter.innerHTML = score - 1
+            playerPattern = [];
+            compTurn = true;
+            flash = 0;
+            intervalId = setInterval(gameTurnLop, 800)
+            invisible()
+        }
 }
