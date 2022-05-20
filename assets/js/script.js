@@ -10,97 +10,105 @@ let win;
 const startButton = document.getElementById("gamestart")
 const infoButton = document.getElementById('info')
 const scoreCounter = document.getElementById('score')
+const boxes = document.querySelectorAll('.tile')
 const t1 = document.getElementById('1')
 const t2 = document.getElementById('2')
 const t3 = document.getElementById('3')
-const t4 = document.getElementById('4')
-const t5 = document.getElementById('5')
-const t6 = document.getElementById('6')
-const t7 = document.getElementById('7')
-const t8 = document.getElementById('8')
-const t9 = document.getElementById('9')
-const t10 = document.getElementById('10')
-const t11 = document.getElementById('11')
-const t12 = document.getElementById('12')
-const t13 = document.getElementById('13')
-const t14 = document.getElementById('14')
-const t15 = document.getElementById('15')
-const t16 = document.getElementById('16')
-const t17 = document.getElementById('17')
-const t18 = document.getElementById('18')
-const t19 = document.getElementById('19')
-const t20 = document.getElementById('20')
-const t21 = document.getElementById('21')
-const t22 = document.getElementById('22')
-const t23 = document.getElementById('23')
-const t24 = document.getElementById('24')
-const t25 = document.getElementById('25')
-const t26 = document.getElementById('26')
-const t27 = document.getElementById('27')
-const t28 = document.getElementById('28')
-const t29 = document.getElementById('29')
-const t30 = document.getElementById('30')
 
 function runGame() {
     win = false;
+    cantClick()
     pattern = [];
     playerPattern = [];
-    flash = [];
+    flash = 0;
     intervalId = 0;
-    score = 0;
-    scoreCounter.innerHTML = 1;
+    score = 1;
+    scoreCounter.innerHTML = 0;
     good = true;
 
     for (var i = 0; i < 10; i++) {
-        if (i = 1) {
-        pattern.push(Math.floor(Math.random() * 3 + 1))
-        }
-    }
-    console.log(pattern)
+        pathBuild(i)
+    };
+    compTurn = true;
+    intervalId = setInterval(gameTurn, 800)
 }
 
-function pathBuild() {
-    if (score = 1) {
-        const tiles = [t1, t2, t3];
-        const random = tiles[Math.floor(Math.random() * 3 )];
-        pattern.push(random)
-    } else if (score = 2) {
-        const tiles = [t4,t5,t6];
-        const random = tiles[Math.floor(Math.random() * 3 )];
-        pattern.push(random)
-    } else if (score = 3) {
-        const tiles = [t7,t8,t9];
-        const random = tiles[Math.floor(Math.random() * 3 )];
-        pattern.push(random)
-    } else if (score = 4) {
-        const tiles = [t10,t11,t12];
-        const random = tiles[Math.floor(Math.random() * 3 )];
-        pattern.push(random)
-    } else if (score = 5) {
-        const tiles = [t13,t14,t15];
-        const random = tiles[Math.floor(Math.random() * 3 )];
-        pattern.push(random)
-    } else if (score = 6) {
-        const tiles = [t16,t17,t18];
-        const random = tiles[Math.floor(Math.random() * 3 )];
-        pattern.push(random)
-    } else if (score = 7) {
-        const tiles = [t19,t20,t21];
-        const random = tiles[Math.floor(Math.random() * 3 )];
-        pattern.push(random)
-    } else if (score = 8) {
-        const tiles = [t22,t23,t24];
-        const random = tiles[Math.floor(Math.random() * 3 )];
-        pattern.push(random)
-    } else if (score = 9) {
-        const tiles = [t25,t26,t27];
-        const random = tiles[Math.floor(Math.random() * 3 )];
-        pattern.push(random)
-    } else if (score = 10) {
-        const tiles = [t28,t29,t30];
-        const random = tiles[Math.floor(Math.random() * 3 )];
-        pattern.push(random)
+function gameTurn() {
+    if (flash == score) {
+        clearInterval(intervalId);
+        compTurn = false;
+        clearBox();
+        canClick();
     }
+
+    if (compTurn) {
+        clearBox();
+        setTimeout(() => {
+            anim();
+            flash++
+        }, 200)
+    }
+}
+
+function anim() {
+    let tile = document.getElementById(`${pattern[flash]}`)
+    tile.classList.add('activated')
+}
+
+function columnOne() {
+    if (pattern[flash] == 1) {
+        t1.style.backgroundColor = "yellow"
+    }
+    if (pattern[flash] == 2) {
+        t1.style.backgroundColor = "yellow"
+    }
+    if (pattern[flash] == 3) {
+        t1.style.backgroundColor = "yellow"
+    }
+
+}
+
+/* removes the unclickable class from the tiles so they can be interacted with by the Player */
+function canClick() {
+    for (const box of boxes) {
+        box.classList.remove('unclickable');
+      }
+}
+
+/* adds the unclickable class from the tiles so they cannot be interacted with by the Player */
+function cantClick() {
+    for (const box of boxes) {
+        box.classList.add('unclickable');
+      }
+}
+
+
+
+/* generates a random number 10 times, each time changing the range by 3
+* to create a number for each row of the path
+ */
+function pathBuild(i) {
+    if (i < 1) {
+        pattern.push(Math.floor(Math.random() * 3 + 1)) 
+        } else if (i < 2) {
+            pattern.push(Math.floor(Math.random() * 3 + 4))
+        } else if (i < 3) {
+            pattern.push(Math.floor(Math.random() * 3 + 7))
+        } else if (i < 4) {
+            pattern.push(Math.floor(Math.random() * 3 + 10))
+        } else if (i < 5) {
+            pattern.push(Math.floor(Math.random() * 3 + 13))
+        } else if (i < 6) {
+            pattern.push(Math.floor(Math.random() * 3 + 16))
+        } else if (i < 7) {
+            pattern.push(Math.floor(Math.random() * 3 + 19))
+        } else if (i < 8) {
+            pattern.push(Math.floor(Math.random() * 3 + 22))
+        } else if (i < 9) {
+            pattern.push(Math.floor(Math.random() * 3 + 25))
+        } else if (i < 10) {
+            pattern.push(Math.floor(Math.random() * 3 + 27))
+        }
 }
 
 function nextLevel () {
@@ -123,37 +131,15 @@ function yellow() {
     }
 }
 
+function clearBox() {
+    for (const box of boxes) {
+        box.classList.remove('activated');
+      }
+}
+
 
 startButton.addEventListener('click', runGame)
 
-t1.addEventListener('click', yellow)
-t2.addEventListener('click', yellow)
-t3.addEventListener('click', yellow)
-t4.addEventListener('click', yellow)
-t5.addEventListener('click', yellow)
-t6.addEventListener('click', yellow)
-t7.addEventListener('click', yellow)
-t8.addEventListener('click', yellow)
-t9.addEventListener('click', yellow)
-t9.addEventListener('click', yellow)
-t10.addEventListener('click', yellow)
-t11.addEventListener('click', yellow)
-t12.addEventListener('click', yellow)
-t13.addEventListener('click', yellow)
-t14.addEventListener('click', yellow)
-t15.addEventListener('click', yellow)
-t16.addEventListener('click', yellow)
-t17.addEventListener('click', yellow)
-t18.addEventListener('click', yellow)
-t19.addEventListener('click', yellow)
-t20.addEventListener('click', yellow)
-t21.addEventListener('click', yellow)
-t22.addEventListener('click', yellow)
-t23.addEventListener('click', yellow)
-t24.addEventListener('click', yellow)
-t25.addEventListener('click', yellow)
-t26.addEventListener('click', yellow)
-t27.addEventListener('click', yellow)
-t28.addEventListener('click', yellow)
-t29.addEventListener('click', yellow)
-t30.addEventListener('click', yellow)
+for (const box of boxes) {
+    box.addEventListener('click', yellow);
+  }

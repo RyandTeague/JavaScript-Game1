@@ -22,6 +22,7 @@ table.GeneratedTable td.activated {
 
 table.GeneratedTable td.activated:hover {
     background-color: yellow;
+    opacity: 100;
 }
 
 table.GeneratedTable td.activated:active {
@@ -31,6 +32,10 @@ table.GeneratedTable td.activated:active {
 .unclickable {
     pointer-events: none;
   }
+
+.invisible {
+    opacity: 0;
+}
 
 /* --------- Game layout */
 
