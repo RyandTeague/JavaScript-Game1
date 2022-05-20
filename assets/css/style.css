@@ -109,7 +109,7 @@ table.GeneratedTable td:hover {
 }
 
 #lopmode {
-    display: none;
+    opacity: 0;
 }
 
 /* --------- Media queries */

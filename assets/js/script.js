@@ -10,12 +10,13 @@ let win;
 const startButton = document.getElementById("gamestart")
 const infoButton = document.getElementById('info')
 const scoreCounter = document.getElementById('score')
+const bestScore = document.getElementById('bestscore')
 const boxes = document.querySelectorAll('.tile')
-const t1 = document.getElementById('1')
-const t2 = document.getElementById('2')
-const t3 = document.getElementById('3')
+const lop = document.getElementById("lopmode")
+
 
 function runGame() {
+    visible()
     win = false;
     cantClick()
     pattern = [];
@@ -42,6 +43,7 @@ function gameTurn() {
     }
 
     if (compTurn) {
+        cantClick()
         clearBox();
         setTimeout(() => {
             anim();
@@ -53,19 +55,6 @@ function gameTurn() {
 function anim() {
     let tile = document.getElementById(`${pattern[flash]}`)
     tile.classList.add('activated')
-}
-
-function columnOne() {
-    if (pattern[flash] == 1) {
-        t1.style.backgroundColor = "yellow"
-    }
-    if (pattern[flash] == 2) {
-        t1.style.backgroundColor = "yellow"
-    }
-    if (pattern[flash] == 3) {
-        t1.style.backgroundColor = "yellow"
-    }
-
 }
 
 /* removes the unclickable class from the tiles so they can be interacted with by the Player */
@@ -82,6 +71,27 @@ function cantClick() {
       }
 }
 
+function check() {
+    if (playerPattern[playerPattern.length - 1] !== pattern[playerPattern.length - 1]) 
+      good = false;
+
+    if (playerPattern.length == 10 && good) {
+        gameWin()
+    };
+    
+    if (good == false) {
+        gameLose()
+    }
+
+    if (score == playerPattern.length && good && !win) {
+        score++;
+        scoreCounter.innerHTML = score - 1
+        playerPattern = [];
+        compTurn = true;
+        flash = 0;
+        intervalId = setInterval(gameTurn, 800)
+    }
+}
 
 
 /* generates a random number 10 times, each time changing the range by 3
@@ -111,16 +121,33 @@ function pathBuild(i) {
         }
 }
 
-function nextLevel () {
-    score += 1;
-    scoreCounter.textContent = score;
-    const newPattern = [pattern]
-    newPattern.push(pathBuild());
-    console.log(newPattern)
+function gameWin() {
+    alert("you win");
+    cantClick();
+    win = true;
+    lop.style.opacity = "100"
+    setTimeout(() => {
+        for (box of boxes) {
+            clearBox()
+        }}, 1600);
 }
 
-function gameWin() {
-
+function gameLose() {
+    alert("you lose")
+    if (bestScore.innerHTML < scoreCounter.innerHTML) {
+    bestScore.innerHTML = scoreCounter.innerHTML
+    }
+    scoreCounter.innerHTML = 0
+    for (i = 0; i < playerPattern.length; i++) {
+        let wrong = document.getElementById(`${pattern[i]}`)
+        wrong.style.backgroundColor = "red"
+    }
+    cantClick()
+    setTimeout(() => {
+        for (box of boxes) {
+            box.style.backgroundColor = "white"
+        }}, 1600);
+    clearBox()
 }
 
 function yellow() {
@@ -137,9 +164,95 @@ function clearBox() {
       }
 }
 
+function invisible()  {
+    for (const box of boxes) {
+        box.classList.add('invisible');
+      }
+}
+
+function visible()  {
+    for (const box of boxes) {
+        box.classList.remove('invisible');
+      }
+}
+
+function gameOver() {
+    t10.innerHTML = "G"
+    t13.innerHTML = "A"
+    t16.innerHTML = "M"
+    t19.innerHTML = "E"
+    t11.innerHTML = "O"
+    t14.innerHTML = "V"
+    t17.innerHTML = "E"
+    t20.innerHTML = "R"
+}
+
+//canClick()
 
 startButton.addEventListener('click', runGame)
 
 for (const box of boxes) {
-    box.addEventListener('click', yellow);
+    box.addEventListener('click', (event) => {
+        if(playerPattern.indexOf(event.target.id) != -1){ 
+            return; 
+        };
+        playerPattern.push(parseInt(event.target.id));
+        check();
+        if(!win) {
+            setTimeout(() => {
+                visible()
+            }, 300)
+        }
+    });
   }
+
+  for (const box of boxes) {
+    box.addEventListener('click', yellow)
+  }
+
+
+function playerPath() {
+    playerPattern.push(this.id)
+}
+
+
+// Secret Mode
+lop.addEventListener('click', runLopGame)
+
+function runLopGame() {
+    win = false;
+    cantClick()
+    pattern = [];
+    playerPattern = [];
+    flash = 0;
+    intervalId = 0;
+    score = 1;
+    scoreCounter.innerHTML = 0;
+    good = true;
+
+    for (var i = 0; i < 10; i++) {
+        pathBuild(i)
+    };
+    compTurn = true;
+    intervalId = setInterval(gameTurnLop, 800)
+}
+
+function gameTurnLop() {
+    if (flash == score) {
+        clearInterval(intervalId);
+        compTurn = false;
+        invisible()
+        clearBox();
+        canClick();
+    }
+
+    if (compTurn) {
+        visible()
+        cantClick()
+        clearBox();
+        setTimeout(() => {
+            anim();
+            flash++
+        }, 200)
+    }
+}
