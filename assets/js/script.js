@@ -15,6 +15,7 @@ const scoreCounter = document.getElementById('score')
 const bestScore = document.getElementById('bestscore')
 const boxes = document.querySelectorAll('.tile')
 const lop = document.getElementById("lopmode")
+const background = document.getElementsByClassName('game-area')
 
 
 function runGame() {

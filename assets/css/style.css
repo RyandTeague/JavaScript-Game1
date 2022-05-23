@@ -1,9 +1,9 @@
 /* --------- Global style */
 
 body {
-    background-color: #fafafa;
+    background-color: #303030;
     font-family: "Raleway", sans-serif;
-    color: #445361;
+    color: #fafafa;
     text-align: center;
 }
 
@@ -46,11 +46,11 @@ table.GeneratedTable td.activated:active {
     margin: 0 auto;
     padding: 2.5% 0;
     border: 2px solid;
-    border-color: linear-gradient(#000000, #fafafa);
+    border-color: rgba(74, 74, 74, 0.5);
 }
 
 .game-area {
-    background-image: url(../images/background.png);
+    background-image: url(../images/background-1.png);
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center center;
@@ -59,7 +59,7 @@ table.GeneratedTable td.activated:active {
     margin-left: auto;
     margin-right: auto;
     border: 2px solid;
-    border-color: linear-gradient(#42A1EC, #0070C9);
+    border-color: rgba(74, 74, 74, 0.5);
 }
 
 
