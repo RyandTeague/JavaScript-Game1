@@ -5,10 +5,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- font awesome and google fonts -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
-        integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/css?family=Raleway%7CRighteous" rel="stylesheet">
+    <!--google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Plus+Jakarta+Sans&display=swap"
+        rel="stylesheet">
+
     <link rel="stylesheet" href="assets/css/style.css">
     <title>Leap of Faith</title>
 </head>
@@ -17,7 +19,7 @@
     <h1 class="heading">Leap Of Faith</h1>
 
     <div class="game-holder">
-        <div class="game-area">
+        <div class="game-area" id="background">
             <div class="controls-area">
                 <table class="GeneratedTable">
                     <thead>
@@ -73,24 +75,32 @@
     </div>
 
     <div class="buttons">
-        <span><button class="button" id="info">i</button></span>
-        <span><button class="button gamestart" id="gamestart">Play!</button></span>
-        <span><button class="button lopstart unclickable" id="lopmode">Leap of Faith Mode!</button></span>
+        <span id="left"><button class="button" id="info">i</button></span>
+        <span id="middle"><button class="button gamestart" id="gamestart">Play!</button></span>
+        <span id="right"><button class="button lopstart unclickable" id="lopmode">Leap of Faith Mode!</button></span>
     </div>
 
     <div class="hidden" id="instructions">
         <h2>How To Play</h2>
-        <p> The Goal of the game is to reach the other side of the bridge, however there is only one safe path over. <br>
-             When you click 'Play!' the first safe square will flash and you will then have to click on it. <br>
-             Then the next safe square will be revealed to you, however you have to remember the entire correct sequence <br>
-            to make it across safely.</p>
+        <p> The goal of the game is to reach the other side of the bridge, <br> however there is only one safe path
+            over. <br>
+            When you click 'Play!' the first safe square will flash <br> and you will then have to click on it. <br>
+            Then the next safe square will be revealed to you, <br> however you will have to remember the entire correct
+            sequence <br>
+            to make it across safely.
+        </p>
+        <br>
+        <p class="close">
+            (Click to close window)
+        </p>
     </div>
 
-    <div class="hidden" id="Win">
+    <div class="hidden" id="win">
         <h2>You Win!</h2>
-        <p>Now try to beat the game again in 'Leap of Faith Mode' where you wont be able to see the path when selecting!</p>
+        <p>Now try to beat the game again in 'Leap of Faith Mode' where you won't be able to see the path when playing!
+        </p>
     </div>
-    <div class="hidden" id="Lose">
+    <div class="hidden" id="lose">
         <h2>You Lose!</h2>
         <p>Oh no! You fell off the path, press 'Play!' to try again!</p>
     </div>

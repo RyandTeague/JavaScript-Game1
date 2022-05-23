@@ -1,8 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Plus+Jakarta+Sans&display=swap');
+
+
 /* --------- Global style */
 
 body {
     background-color: #303030;
-    font-family: "Raleway", sans-serif;
+    font-family: 'Plus Jakarta Sans', sans-serif;
     color: #fafafa;
     text-align: center;
 }
@@ -11,7 +14,14 @@ body {
 
 .heading {
     text-align: center;
-    font-size: 2.5rem;
+    font-size: 400%;
+    font-family: 'Alfa Slab One', cursive;
+    letter-spacing: 5px;
+    background: linear-gradient(180deg, rgba(238, 91, 36, 1) 30%, rgba(255, 219, 8, 1) 60%, rgba(255, 255, 255, 1) 86%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin: 5px auto
 }
 
 /* Classes to be used to simulate animations */
@@ -28,6 +38,16 @@ table.GeneratedTable td.activated:hover {
 table.GeneratedTable td.activated:active {
     background-color: yellow;
 }
+
+table.GeneratedTable td.wrong {
+    background-color: red;
+}
+
+table.GeneratedTable td.wrong:hover {
+    background-color: red;
+    opacity: 100;
+}
+
 
 .unclickable {
     pointer-events: none;
@@ -84,8 +104,10 @@ table.GeneratedTable td:hover {
     background-color: rgb(120, 120, 75);
 }
 
+/* Layout of Score and Best Score Area*/
+
 .score-area {
-    margin: 5px auto;
+    margin: 5px auto 1px auto;
     width: 60%;
     font-size: 1.2rem;
 }
@@ -105,94 +127,145 @@ table.GeneratedTable td:hover {
 }
 
 #bestscore {
-    color: blue;
+    color: rgb(255, 255, 255);
     font-weight: bold;
 }
 
 .scores {
     display: inline-block;
-    padding: 25px;
+    padding: 10px 15px 15px 15px;
 }
 
-/* Hidden boxes */
+/* Hidden boxes that pop up over game*/
 
 .hidden {
     margin: 0 auto;
     position: absolute;
-    top: 30%;
-    -ms-transform: translateY(-70%);
-    transform: translateY(-70%);
+    top: 20%;
+    -ms-transform: translateY(-80%);
+    transform: translateY(-80%);
     left: 50%;
     -ms-transform: translateX(-50%);
     transform: translateX(-50%);
+    background-color: #42A1EC;
+    width: 50%;
+    height: auto;
+    padding: 5%;
+    border: 4px ridge #0077CC;
     display: none;
 }
 
 .hidden h2 {
-
+    height: auto;
+    font-size: 300%;
+    font-weight: 1000;
+    margin: 0 auto;
+    padding: 0;
+    position: relative;
+    top: 10%;
+    line-height: 200%;
+    letter-spacing: 150%;
 }
 
 .hidden p {
+    height: auto;
+    font-size: 200%;
+    font-weight: 500;
+    margin: 0 auto;
+    position: relative;
+    top: 10%;
+}
+
+#instructions {
+    width: 80%;
+    height: 35%;
+    padding: 2.5% 0;
+}
+
+#instructions h2 {
+    top: 0%;
+    line-height: 1;
+    text-decoration: solid 2px white;
+}
+
+#instructions p {
+    font-size: 150%;
+    line-height: 1.5;
+    padding: 5px;
+}
+
+#win {
+    padding: 5% 5%;
 
 }
 
 
-/* --------- Buttons */
+/* --------- Buttons  design from: https://getcssscan.com/css-buttons-examples*/
+
+.buttons {
+    width: 85%;
+    margin: 0 auto;
+}
 
 .button {
-  background-image: linear-gradient(#42A1EC, #0070C9);
-  border: 1px solid #0077CC;
-  border-radius: 4px;
-  box-sizing: border-box;
-  color: #FFFFFF;
-  cursor: pointer;
-  direction: ltr;
-  display: inline-block;
-  font-family: "SF Pro Text","SF Pro Icons","AOS Icons","Helvetica Neue",Helvetica,Arial,sans-serif;
-  font-size: 17px;
-  font-weight: 400;
-  letter-spacing: -.022em;
-  line-height: 1.47059;
-  min-width: 30px;
-  overflow: visible;
-  padding: 4px 15px;
-  text-align: center;
-  vertical-align: baseline;
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
-  white-space: nowrap;
+    background-image: linear-gradient(#42A1EC, #0070C9);
+    border: 1px solid #0077CC;
+    border-radius: 4px;
+    box-sizing: border-box;
+    color: #FFFFFF;
+    cursor: pointer;
+    direction: ltr;
+    display: inline-block;
+    font-family: "SF Pro Text", "SF Pro Icons", "AOS Icons", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 17px;
+    font-weight: 400;
+    letter-spacing: -.022em;
+    line-height: 1.47059;
+    min-width: 30px;
+    overflow: visible;
+    padding: 16px 30px;
+    text-align: center;
+    vertical-align: baseline;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    white-space: nowrap;
+    margin-top: 0;
+    margin-bottom: 5px;
 }
 
 .button:disabled {
-  cursor: default;
-  opacity: .3;
+    cursor: default;
+    opacity: .3;
 }
 
 .button:hover {
-  background-image: linear-gradient(#51A9EE, #147BCD);
-  border-color: #1482D0;
-  text-decoration: none;
+    background-image: linear-gradient(#51A9EE, #147BCD);
+    border-color: #1482D0;
+    text-decoration: none;
 }
 
 .button:active {
-  background-image: linear-gradient(#3D94D9, #0067B9);
-  border-color: #006DBC;
-  outline: none;
+    background-image: linear-gradient(#3D94D9, #0067B9);
+    border-color: #006DBC;
+    outline: none;
 }
 
 .button:focus {
-  box-shadow: rgba(131, 192, 253, 0.5) 0 0 0 3px;
-  outline: none;
+    box-shadow: rgba(131, 192, 253, 0.5) 0 0 0 3px;
+    outline: none;
 }
 
 #info {
     border-radius: 50%;
+    float: left;
 }
 
 #lopmode {
-    opacity: 100;
+    opacity: 50;
+    float: right;
 }
+
 
 /* --------- Media queries */
 
@@ -202,15 +275,56 @@ table.GeneratedTable td:hover {
     }
 
     .game-area {
-    background-size: contain;
-    border: none;
-    height: 100%;
+        background-size: contain;
+        border: none;
+        height: 100%;
+    }
+
+    .hidden {
+        top: 15%;
+    }
+
+    #instructions {
+        font-size: 80%;
     }
 }
 
 @media (max-width: 700px) {
+    .scores {
+        padding: 15px;
+    }
+
+    .heading {
+        font-size: 300%;
+    }
+
     .game-holder {
         height: 300px;
+    }
+
+    .hidden {
+        top: 15%;
+    }
+
+    .hidden h2 {
+        top:25%;
+        font-size: 200%;
+        
+    }
+
+    .hidden p {
+        display: none;
+    }
+
+    #instructions {
+        margin: 0 auto;
+        height: auto;
+        font-size: 75%;
+        top: 10%;
+    }
+
+    #instructions p {
+        display: block;
     }
 }
 
@@ -240,12 +354,20 @@ table.GeneratedTable td:hover {
     table.GeneratedTable {
         width: 70%;
     }
+
+    .hidden {
+        top: 10%
+    }
+
+    #instructions {
+        font-size: 50%;
+    }
 }
 
 @media (max-width: 320px) {
     .controls-area {
         width: 75%;
-        margin:auto;
+        margin: auto;
     }
 
     table.GeneratedTable {
