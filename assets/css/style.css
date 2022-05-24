@@ -32,7 +32,7 @@ table.GeneratedTable td.activated {
 
 table.GeneratedTable td.activated:hover {
     background-color: yellow;
-    opacity: 100;
+    opacity: 1;
 }
 
 table.GeneratedTable td.activated:active {
@@ -45,7 +45,7 @@ table.GeneratedTable td.wrong {
 
 table.GeneratedTable td.wrong:hover {
     background-color: red;
-    opacity: 100;
+    opacity: 1;
 }
 
 
@@ -88,7 +88,6 @@ table.GeneratedTable {
     color: #000000;
     margin-left: auto;
     margin-right: auto;
-    position: center center;
 }
 
 table.GeneratedTable td {
@@ -164,7 +163,6 @@ table.GeneratedTable td:hover {
     position: relative;
     top: 10%;
     line-height: 200%;
-    letter-spacing: 150%;
 }
 
 .hidden p {
@@ -262,7 +260,7 @@ table.GeneratedTable td:hover {
 }
 
 #lopmode {
-    opacity: 50;
+    opacity: 0;
     float: right;
 }
 
