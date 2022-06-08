@@ -1,6 +1,6 @@
 # Leap of Faith 
 
-![Mock up of website on several differently sized devices](assets/images/mock-up.PNG)
+![Mock up of website on several differently sized devices](assets/images/mockup.PNG)
 
 Website's purpose is to allow users to play an entertaining memory game where they have to remember the correct sequence of tiles and build a path across a ravine. This game was inspired by a scene from Indiana Jones and the Last Crusade so once the player has beaten the game once they unlock a new way to play where they can't see the tiles to click.
 
