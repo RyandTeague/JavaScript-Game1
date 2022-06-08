@@ -79,39 +79,45 @@ function check() {
 ![Shows a score area of the game where the current score and best score are shown.](assets/images/ScoreArea.PNG)
 
  -  Control Area 
-    - The blue ticket button is fixed onto the bottom right corner of every page except the tickets page. This is so at any point when viewing the information a user doesn't have to scroll or look for navigation if they decide they want to go to the festival.
+    - The 'i' button here calls up the information on how to play the game.
+    - The Play button commences the game.
+    - The Leap of Faith Mode is hidden by default and only appears when the game has been beaten once.
 
-![Blue rectangle saying Buy tickets](assets/images/ControlsArea.PNG)
+![Controls area of the game with three buttons: one saying 'i', 'play', and 'Leap of  Faith Mode!'](assets/images/ControlsArea.PNG)
 
  - How to Play
-    - The amenities section supplies the user with information on what there is to do at the festival. 
-    - For the relvant topics there are links to take the user directly to where they can find out more information.
+    - The instructions for the game are in a box that is hidden by default but can be called when the information button is pressed.
+    - The box can be hidden again by clicking it.
 
 
-![four text boxes with images as backgrounds with titles music, camping, food, and activities](assets/images/amenities.PNG)
+![Text box with instructions on how to play the game](assets/images/howToPlay.png)
 
  - Win screen
-    - The imbeded map here allows the user to click out directly to google maps to get directions for the festival.
+    - When the game is won this box appears and alerts the player that they've won and unlocked Leap of Faith Mode.
+    - This box is hidden by clicking it.
 
-![an imbeded map of glencoe](assets/images/map.PNG)
+![A text box saying the player has won!](assets/images/win.png)
 
  -  Lose screen
-    - The footer contains responsive links to different social media sites which is valuable as it encourages the user to stay connected to the festival's media.
-    - There is also an envelope icon that will take the user to the mailing list form.
+    - When the player has pressed the wrong tile the lose message appears.
+    - This box is hidden by clicking it.
 
-![Footer of website showing various social media icons](assets/images/footer.PNG)
+![A text box saying the player has lost the game](assets/images/lose.png)
 
  - Alternate Game mode
-    - The tickets section displays the options for all the different types of tickets the user can purchase.
-    - There is a responsiveness to the ticket boxes so that the user is aware of where their mouse is at any one time.
-    - As the tickets are not on sale yet there is a link to the mailing list within each ticket field so that the user can sign up and be informed when tickets are available.
+    - When the Leap of Faith Mode button is pressed this alternative version of the game is started.
+    - The background player character changes so that it is clear they are on a different version of the game.
+    - After the player is shown the sequence they have to repeat the tiles are hidden from them but are still interactable.
 
-![Showing the ticket section of the website, boxes with ticket information and image backgrounds](assets/images/tickets.PNG)
+![screenshot of the website showing the differences of the alternative game mode](assets/images/lofmode.png)
 
 ### Future Features
 
- - Ticket Purchase
-    - Once tickets are available to purchase the tickets section will need to be updated with links to a page where users will be able to enter their payment information for buying the tickets they want.
+ - Difficulty settings
+    - In the future I would consider adding difficulty settings to the game which change the amount of tiles on the game area and generate longer sequences.
+
+- Random Mode
+    - A mode where the goal isnt to get across but just remember the order of tiles which could be any of the 30 in any order. Game would last either to round 30 or allow repeats in the sequence for an infinite mode.
 
 ## Testing
 
@@ -123,31 +129,20 @@ function check() {
 - CSS
     - No errors were found when passing through the official [(Jigsaw) validator](https://jigsaw.w3.org/css-validator/)
 
+- Javascript
+    - Errors and formatting were checked and corrected using [javascript validator](https://jshint.com/)
+
 ### Compatibility Testing
 
 Site was tested across multiple virtual devices through chrome developor tools.
 
-Site was tested to work on Google chrome, firefox, microsoft edge and internet explorer, although hero image animation does not play on internet explorer.
+Site was tested to work on Google chrome, firefox, microsoft edge and internet explorer.
 
 ### Performance Testing
 
-I generated lighthouse reports for each page of the website, mainly looking to achieve a high accessibility score.
+I generated a lighthouse report for the website.
 
-Landing Page: 
-
-![Lighthouse report: Performance-84 accessibility-96 best practices-100 SEO-100](assets/images/lighthousehome.PNG)
-
-Line-up and Tickets Page:
-
-![Lighthouse report: Performance-82 accessibility-96 best practices-100 SEO-100](assets/images/lighthouselineup.PNG)
-
-Mailing List Page:
-
-![Lighthouse report: Performance-73 accessibility-97 best practices-100 SEO-100](assets/images/lighthousemailing.PNG)
-
-Gallery Page: 
-
-![Lighthouse report: Performance-84 accessibility-94 best practices-92 SEO-100](assets/images/lighthousegallery.PNG)
+![Lighthouse report: Performance-86 accessibility-100 best practices-100 SEO-89](assets/images/lighthouse.PNG)
 
 ### Unfixed Bugs
 
@@ -160,7 +155,7 @@ There are currently no known bugs in the website.
     - From the source section drop-down menu, select the Master Branch
     - Once the master branch has been selected, the page will be automatically refreshed with a detailed ribbon display to indicate the successful deployment.
 
-The live link can be found here - https://ryandteague.github.io/DisCoe/index.html    
+The live link can be found here - https://ryandteague.github.io/JavaScript-Game1/  
 
 ## Credits
 
@@ -168,49 +163,10 @@ The live link can be found here - https://ryandteague.github.io/DisCoe/index.htm
 
 ### Code
 
-Countdown: https://www.w3schools.com/howto/howto_js_countdown.asp
+Button Design: https://getcssscan.com/css-buttons-examples
 
-Drop Down Menu: https://css-tricks.com/convert-menu-to-dropdown/
-
-### Maps
-
-https://www.google.co.uk/maps
+The skeleton of this game's code was adapted from this tutorial for a simon game: https://www.youtube.com/watch?v=n_ec3eowFLQ
 
 ### Photos
+The Background image was created by using Paint and a screenshot from Indiana Jones and the Last Crusade.
 
-Pexels:
-
-    - https://www.pexels.com/photo/people-gathering-near-stage-with-fireworks-1306791/
-    - https://www.pexels.com/photo/person-playing-sun-burst-electric-bass-guitar-in-bokeh-photography-96380/
-    - https://www.pexels.com/photo/photo-of-juicy-burger-on-wooden-surface-1639565/
-    - https://www.pexels.com/photo/an-amusement-park-at-night-2884693/
-    - https://www.pexels.com/photo/silhouette-of-person-standing-near-camping-tent-2398220/
-    - https://www.pexels.com/photo/people-at-concert-1105666/
-    - https://www.pexels.com/photo/photo-of-pitched-dome-tents-overlooking-mountain-ranges-1687845/
-    - https://www.pexels.com/photo/photo-of-teepee-under-a-starry-sky-2666598/
-    - https://www.pexels.com/photo/people-having-a-concert-1190297/
-    - https://www.pexels.com/photo/people-standing-in-front-of-stage-1267317/
-    - https://pixabay.com/photos/concert-crowd-silhouette-3084876/
-    - https://www.pexels.com/photo/person-wearing-white-shirt-standing-120066/
-    - https://www.pexels.com/photo/photo-of-crowd-of-people-1167034/
-    - https://www.pexels.com/photo/two-women-embracing-surrounded-by-crowd-1537638/
-    - https://www.pexels.com/photo/photo-of-fireworks-during-nighttime-1259614/
-    - https://www.pexels.com/photo/stage-lights-2263435/
-    - https://www.pexels.com/photo/woman-facing-ferris-wheel-while-making-heart-hand-sign-1405422/
-    - https://www.pexels.com/photo/red-haired-fire-dancer-blowing-rod-with-flames-167386/
-    - https://www.pexels.com/photo/man-in-denim-long-sleeves-playing-acoustic-guitar-3776838/
-    - https://www.pexels.com/photo/woman-receives-her-takeaway-taco-food-8448070/
-    - https://www.pexels.com/photo/tents-on-green-grass-field-near-mountain-116104/
-    - https://www.pexels.com/photo/man-in-blue-denim-button-up-shirt-and-woman-in-white-floral-shirt-5779485/
-    - https://www.pexels.com/photo/man-in-blue-denim-button-up-shirt-and-woman-in-white-floral-shirt-5779485/
-    
-Unsplash:
-
-    - https://unsplash.com/photos/fpHiMJWjhH0/
-    - https://unsplash.com/photos/DSB1MZWsGco/
-
-
-
-### Icons
-
-https://fontawesome.com/

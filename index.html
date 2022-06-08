@@ -16,11 +16,15 @@
 </head>
 
 <body>
+    <!--The Heading of the website/Game-->
     <h1 class="heading">Leap Of Faith</h1>
 
+    <!--The Div containing the entire game area as well as border-->
     <div class="game-holder">
         <div class="game-area" id="background">
             <div class="controls-area">
+
+                <!--Table which contains the interactable tiles-->
                 <table class="GeneratedTable">
                     <tbody>
                         <tr>
@@ -65,17 +69,20 @@
         </div>
     </div>
 
+    <!--Area for displaying scores-->
     <div class="score-area">
         <p class="scores">Current Score <span id="score">0</span></p>
         <p class="scores">Best Score <span id="bestscore">0</span></p>
     </div>
 
+    <!--Area for displaying buttons to call up information, or to start one of the game modes-->
     <div class="buttons">
         <span id="left"><button class="button" id="info">i</button></span>
         <span id="middle"><button class="button gamestart" id="gamestart">Play!</button></span>
         <span id="right"><button class="button lopstart unclickable" id="lopmode">Leap of Faith Mode!</button></span>
     </div>
 
+    <!--Three hidden boxes which appear when called by Javascript code-->
     <div class="hidden" id="instructions">
         <h2>How To Play</h2>
         <p> The goal of the game is to reach the other side of the bridge, <br> however there is only one safe path
@@ -102,6 +109,7 @@
     </div>
 
 
+    <!--Javascript-->
     <script src="assets/js/script.js"></script>
 </body>
 
