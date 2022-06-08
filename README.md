@@ -1,108 +1,177 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# Leap of Faith 
 
-Welcome RyandTeague,
+![Mock up of website on several differently sized devices](assets/images/mock-up.PNG)
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
+Website's purpose is to allow users to play an entertaining memory game where they have to remember the correct sequence of tiles and build a path across a ravine. This game was inspired by a scene from Indiana Jones and the Last Crusade so once the player has beaten the game once they unlock a new way to play where they can't see the tiles to click.
 
-You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **September 1, 2021**
+The main aim for this project was to create a game that used javascript in combination with CSS and Html.
 
-## Gitpod Reminders
+## Features
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+### Existing Features
 
-`python3 -m http.server`
+ - Navigation Bar
+    - Featured on all three pages, the navigation bar has a responsive design and through the home, line-up, mailing list and gallery text the user can navigate the website easily without having to use the 'back' button.
 
-A blue button should appear to click: _Make Public_,
+![Heading of website with logo at the far left and then the navigation bar showing home, line-up and tickets, mailing list, and gallery](assets/images/heading.PNG)
 
-Another blue button should appear to click: _Open Browser_.
+ - Landing Page Image
+    - Within the eyecathching image the name of the festival is displayed as well as specifically stating what it is, in case a user has found thmeselves on the page with no context. 
+    - The countdown timer ticks down second by second to when tickets go on sale, when the timer completes it changes to saying "Tickets on sale: Now!
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+![Landing page hero image of a crown in front of a stage, text is superimposed saying "Discoe, Music festival in Glencoe, 3rd-5th June and then a countdown below](assets/images/hero.PNG)
 
-A blue button should appear to click: _Make Public_,
+ - Ticket Button
+    - The blue ticket button is fixed onto the bottom right corner of every page except the tickets page. This is so at any point when viewing the information a user doesn't have to scroll or look for navigation if they decide they want to go to the festival.
 
-Another blue button should appear to click: _Open Browser_.
+![Blue rectangle saying Buy tickets](assets/images/buy-button.PNG)
 
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+ - Amenities Section
+    - The amenities section supplies the user with information on what there is to do at the festival. 
+    - For the relvant topics there are links to take the user directly to where they can find out more information.
 
-To log into the Heroku toolbelt CLI:
 
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
+![four text boxes with images as backgrounds with titles music, camping, food, and activities](assets/images/amenities.PNG)
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
+ - Imbeded Map
+    - The imbeded map here allows the user to click out directly to google maps to get directions for the festival.
 
-------
+![an imbeded map of glencoe](assets/images/map.PNG)
 
-## Release History
+ - Footer
+    - The footer contains responsive links to different social media sites which is valuable as it encourages the user to stay connected to the festival's media.
+    - There is also an envelope icon that will take the user to the mailing list form.
 
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
+![Footer of website showing various social media icons](assets/images/footer.PNG)
 
-**September 1 2021:** Remove `PGHOSTADDR` environment variable.
+ - Tickets Section
+    - The tickets section displays the options for all the different types of tickets the user can purchase.
+    - There is a responsiveness to the ticket boxes so that the user is aware of where their mouse is at any one time.
+    - As the tickets are not on sale yet there is a link to the mailing list within each ticket field so that the user can sign up and be informed when tickets are available.
 
-**July 19 2021:** Remove `font_fix` script now that the terminal font issue is fixed.
+![Showing the ticket section of the website, boxes with ticket information and image backgrounds](assets/images/tickets.PNG)
 
-**July 2 2021:** Remove extensions that are not available in Open VSX.
+ - Line up
+    - The line up list is a responsive list that highlight the artist the cursor is over and every list item links to the artist's webpage in a new tab so that users can learn more about any name they dont recognise.
 
-**June 30 2021:** Combined the P4 and P5 templates into one file, added the uptime script. See the FAQ at the end of this file.
+![List of musical artists split into the three days of the festival](assets/images/line-up.PNG)
 
-**June 10 2021:** Added: `font_fix` script and alias to fix the Terminal font issue
+ - Mailing list form
+    - This page allows users to sign up to be notified when tickets are on sale.
+    - There is validation for the email address section and the earliest date available for selection when choosing birthdate ensures that the user is 18+ by the time of the festival.
+    - There is also a dropdown selection to gather information on general interest on each type of ticket, which is valuable for knowing demand pre-sale.
 
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
+![Image of crowd at a concert with a grey box in front cont-aining a form to input details to be contacted](assets/images/contactform.PNG)
 
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
+ - Gallery
+    - The gallery allows the user to see highlights from the previous year seperated into highlights from the main festival area and highlights from the camping area.
+    - This section is valuable as it allows the user to know what the festival looks like and what sort of activities and food there are available.
 
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
+![A gallery of various images related to the festival](assets/images/gallery.PNG)
 
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
+### Features Left to Implement
 
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
+ - Ticket Purchase
+    - Once tickets are available to purchase the tickets section will need to be updated with links to a page where users will be able to enter their payment information for buying the tickets they want.
 
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
+## Testing
 
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
+### Validator Testing
 
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
+- HTML
+    - No errors were returned when passing through the official [W3C validator](https://validator.w3.org/).
 
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
+- CSS
+    - No errors were found when passing through the official [(Jigsaw) validator](https://jigsaw.w3.org/css-validator/)
 
-------
+### Compatibility Testing
 
-## FAQ about the uptime script
+Site was tested across multiple virtual devices through chrome developor tools.
 
-**Why have you added this script?**
+Site was tested to work on Google chrome, firefox, microsoft edge and internet explorer, although hero image animation does not play on internet explorer.
 
-It will help us to calculate how many running workspaces there are at any one time, which greatly helps us with cost and capacity planning. It will help us decide on the future direction of our cloud-based IDE strategy.
+### Performance Testing
 
-**How will this affect me?**
+I generated lighthouse reports for each page of the website, mainly looking to achieve a high accessibility score.
 
-For everyday usage of Gitpod, it doesn’t have any effect at all. The script only captures the following data:
+Landing Page: 
 
-- An ID that is randomly generated each time the workspace is started.
-- The current date and time
-- The workspace status of “started” or “running”, which is sent every 5 minutes.
+![Lighthouse report: Performance-84 accessibility-96 best practices-100 SEO-100](assets/images/lighthousehome.PNG)
 
-It is not possible for us or anyone else to trace the random ID back to an individual, and no personal data is being captured. It will not slow down the workspace or affect your work.
+Line-up and Tickets Page:
 
-**So….?**
+![Lighthouse report: Performance-82 accessibility-96 best practices-100 SEO-100](assets/images/lighthouselineup.PNG)
 
-We want to tell you this so that we are being completely transparent about the data we collect and what we do with it.
+Mailing List Page:
 
-**Can I opt out?**
+![Lighthouse report: Performance-73 accessibility-97 best practices-100 SEO-100](assets/images/lighthousemailing.PNG)
 
-Yes, you can. Since no personally identifiable information is being captured, we'd appreciate it if you let the script run; however if you are unhappy with the idea, simply run the following commands from the terminal window after creating the workspace, and this will remove the uptime script:
+Gallery Page: 
 
-```
-pkill uptime.sh
-rm .vscode/uptime.sh
-```
+![Lighthouse report: Performance-84 accessibility-94 best practices-92 SEO-100](assets/images/lighthousegallery.PNG)
 
-**Anything more?**
+### Unfixed Bugs
 
-Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` file so that you know what it's doing. As future software developers, it will be great practice to see how these shell scripts work.
+There are currently no known bugs in the website.
 
----
+## Deployment
 
-Happy coding!
+- The site was deployed to GitHub pages. The steps to deploy are as follows
+    - In the Github repository, navigate to the Settings tab
+    - From the source section drop-down menu, select the Master Branch
+    - Once the master branch has been selected, the page will be automatically refreshed with a detailed ribbon display to indicate the successful deployment.
+
+The live link can be found here - https://ryandteague.github.io/DisCoe/index.html    
+
+## Credits
+
+- To complete this project I used Code Institute student template: [gitpod full template](https://github.com/Code-Institute-Org/gitpod-full-template)
+
+### Code
+
+Countdown: https://www.w3schools.com/howto/howto_js_countdown.asp
+
+Drop Down Menu: https://css-tricks.com/convert-menu-to-dropdown/
+
+### Maps
+
+https://www.google.co.uk/maps
+
+### Photos
+
+Pexels:
+
+    - https://www.pexels.com/photo/people-gathering-near-stage-with-fireworks-1306791/
+    - https://www.pexels.com/photo/person-playing-sun-burst-electric-bass-guitar-in-bokeh-photography-96380/
+    - https://www.pexels.com/photo/photo-of-juicy-burger-on-wooden-surface-1639565/
+    - https://www.pexels.com/photo/an-amusement-park-at-night-2884693/
+    - https://www.pexels.com/photo/silhouette-of-person-standing-near-camping-tent-2398220/
+    - https://www.pexels.com/photo/people-at-concert-1105666/
+    - https://www.pexels.com/photo/photo-of-pitched-dome-tents-overlooking-mountain-ranges-1687845/
+    - https://www.pexels.com/photo/photo-of-teepee-under-a-starry-sky-2666598/
+    - https://www.pexels.com/photo/people-having-a-concert-1190297/
+    - https://www.pexels.com/photo/people-standing-in-front-of-stage-1267317/
+    - https://pixabay.com/photos/concert-crowd-silhouette-3084876/
+    - https://www.pexels.com/photo/person-wearing-white-shirt-standing-120066/
+    - https://www.pexels.com/photo/photo-of-crowd-of-people-1167034/
+    - https://www.pexels.com/photo/two-women-embracing-surrounded-by-crowd-1537638/
+    - https://www.pexels.com/photo/photo-of-fireworks-during-nighttime-1259614/
+    - https://www.pexels.com/photo/stage-lights-2263435/
+    - https://www.pexels.com/photo/woman-facing-ferris-wheel-while-making-heart-hand-sign-1405422/
+    - https://www.pexels.com/photo/red-haired-fire-dancer-blowing-rod-with-flames-167386/
+    - https://www.pexels.com/photo/man-in-denim-long-sleeves-playing-acoustic-guitar-3776838/
+    - https://www.pexels.com/photo/woman-receives-her-takeaway-taco-food-8448070/
+    - https://www.pexels.com/photo/tents-on-green-grass-field-near-mountain-116104/
+    - https://www.pexels.com/photo/man-in-blue-denim-button-up-shirt-and-woman-in-white-floral-shirt-5779485/
+    - https://www.pexels.com/photo/man-in-blue-denim-button-up-shirt-and-woman-in-white-floral-shirt-5779485/
+    
+Unsplash:
+
+    - https://unsplash.com/photos/fpHiMJWjhH0/
+    - https://unsplash.com/photos/DSB1MZWsGco/
+
+
+
+### Icons
+
+https://fontawesome.com/
