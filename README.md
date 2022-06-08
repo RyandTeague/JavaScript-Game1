@@ -146,7 +146,9 @@ I generated a lighthouse report for the website.
 
 ### Unfixed Bugs
 
-There are currently no known bugs in the website.
+There are currently two bugs known that weren't able to be resolved:
+ - One non-critical issue where on touch screen devices the last tile clicked on a turn will remain shaded as if a cursor was hovering over it during the computer and player's turn.
+ - When tested on a friend's mobile device they had to restart the browser in order to start a new game, I have tested on my own phone and not had this issue. As the bug could not be repeated I was not able to work out the cause before submission.
 
 ## Deployment
 
