@@ -90,7 +90,7 @@ function check() {
 	if (playerPattern[playerPattern.length - 1] !== pattern[playerPattern.length - 1])
 		good = false;
 
-	if (playerPattern.length == 2 && good) {
+	if (playerPattern.length == 10 && good) {
 		gameWin();
 	}
 
